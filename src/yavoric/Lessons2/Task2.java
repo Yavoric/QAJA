@@ -3,40 +3,53 @@ package yavoric.Lessons2;
 		минимальное максимальное и средние значения
 */
 import java.util.Scanner;
-
 public class Task2 {
     public static void main(String[] args) {
+        intputNumberScreen ();
+        searchMinMaxMin ();
+        outputNumberScreen ();
+    }
+    //Функция ввода трех чисел
+    public static void intputNumberScreen (){
         Scanner scanner = new Scanner(System.in);
         System.out.println("Введите число А");
-        int a = scanner.nextInt();
+        Variable2.a = scanner.nextInt();
         System.out.println("Введите число B");
-        int b = scanner.nextInt();
+        Variable2.b= scanner.nextInt();
         System.out.println("Введите число C");
-        int c = scanner.nextInt();
-        double d1 = (a + b + c) / 3;
-        if (a == b && b == c)
+        Variable2.c = scanner.nextInt();
+    }
+    //Функция нахождения МИН, МАКС, СРЕДН числа
+    public static void searchMinMaxMin (){
+        Variable2.midnumber = (Variable2.a + Variable2.b + Variable2.c) / 3;
+        if (Variable2.a == Variable2.b && Variable2.b == Variable2.c)
             System.out.print("Введенные числа равны ");
-        else if (a > b && b > c) {
-            System.out.println("Максимальное число " + a);
-            System.out.println("Минимальное число " + c);
-
-        } else if (b > a && a > c) {
-            System.out.println("Максимальное число" + b);
-            System.out.println("Минимальное число" + c);
-        } else if (c > a && a > b) {
-            System.out.println("Максимальное число" + c);
-            System.out.println("Минимальное число" + b);
-        } else if (a > c && c > b) {
-            System.out.println("Максимальное число" + a);
-            System.out.println("Минимальное число" + b);
-        } else if (b > c && c > a) {
-            System.out.println("Максимальное число" + b);
-            System.out.println("Минимальное число" + a);
-        } else if (c > b && b > a) {
-            System.out.println("Максимальное число" + c);
-            System.out.println("Минимальное число" + a);
+        else if (Variable2.a > Variable2.b && Variable2.b > Variable2.c) {
+            Variable2.maxnumber = Variable2.a;
+            Variable2.minnumber = Variable2.c;
+        } else if (Variable2.b > Variable2.a && Variable2.a > Variable2.c) {
+            Variable2.maxnumber = Variable2.b;
+            Variable2.minnumber = Variable2.c;
+        } else if (Variable2.c > Variable2.a && Variable2.a > Variable2.b) {
+            Variable2.maxnumber = Variable2.c;
+            Variable2.minnumber = Variable2.b;
+        } else if (Variable2.a > Variable2.c && Variable2.c > Variable2.b) {
+            Variable2.maxnumber = Variable2.a;
+            Variable2.minnumber = Variable2.b;
+        } else if (Variable2.b > Variable2.c && Variable2.c > Variable2.a) {
+            Variable2.maxnumber = Variable2.b;
+            Variable2.minnumber = Variable2.a;
+        } else if (Variable2.c > Variable2.b && Variable2.b > Variable2.a) {
+            Variable2.maxnumber = Variable2.c;
+            Variable2.minnumber = Variable2.a;
         }
-        System.out.println("Среднее значение" + d1);
+    }
+    //Функция вывода чисел на экран
+    public static void outputNumberScreen (){
+        System.out.println("Максимальное число = " + Variable2.maxnumber);
+        System.out.println("Минимальное число = " + Variable2.minnumber);
+        System.out.println("Среднее значение = " + Variable2.midnumber);
     }
 }
+
 
