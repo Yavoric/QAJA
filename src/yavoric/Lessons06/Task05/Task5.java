@@ -21,6 +21,9 @@ public class Task5 {
         d2.printData();
         d3.printData();
         d1.differenceIdDays(d3);
+        System.out.println(d1);
+        System.out.println(d1);
+        System.out.println(d1);
 
     }
 }
