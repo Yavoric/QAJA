@@ -52,4 +52,12 @@ public class Data {
         System.out.println("Составляет " + Math.abs(period));
 
     }
+
+    @Override
+    public String toString() {
+        return "Дата" +
+                day +"/"+
+                month +"/"+
+                year;
+    }
 }
