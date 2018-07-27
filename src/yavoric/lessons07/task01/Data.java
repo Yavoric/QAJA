@@ -134,5 +134,11 @@ public class Data {
                 month +"/"+
                 year;
     }
+    public boolean isLeap() {
+        if (this.year % 4 == 0)
+            if (this.year % 100 == 0)
+            return true;
+        else return false;
+    }
 }
 
